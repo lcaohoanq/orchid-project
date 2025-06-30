@@ -1,4 +1,5 @@
 import toast from "react-hot-toast";
+import { baseUrl } from "../apis/api.config";
 
 // Global error handler for API errors
 interface ApiErrorResponse {
@@ -31,8 +32,7 @@ export const handleApiError = (
       error.response.data?.message || `Server Error: ${error.response.status}`;
   } else if (error.request) {
     // Network error - no response received
-    errorMessage =
-      "Cannot connect to server. Please check if the backend is running on http://localhost:8080";
+    errorMessage = `Cannot connect to server. Please check if the backend is running on ${baseUrl}`;
   } else {
     // Other error
     errorMessage = error.message || "An unexpected error occurred";
@@ -59,7 +59,7 @@ export const checkApiConnection = async (
   } catch (error) {
     console.error("API Server is not available:", error);
     toast.error(
-      "Cannot connect to server. Please check if the backend is running on http://localhost:8080",
+      `Cannot connect to server. Please check if the backend is running on ${baseUrl}`,
     );
     return false;
   }
