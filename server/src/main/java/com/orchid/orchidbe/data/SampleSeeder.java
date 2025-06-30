@@ -22,7 +22,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-@Profile("h2")
+@Profile({"h2", "prod"})
 @Component
 @RequiredArgsConstructor
 public class SampleSeeder implements CommandLineRunner {
