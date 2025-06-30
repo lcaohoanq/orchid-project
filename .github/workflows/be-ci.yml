@@ -21,4 +21,4 @@ jobs:
           cache: maven
 
       - name: Run tests with H2 profile
-        run: mvn clean test -Dspring.profiles.active=h2
+        run: mvn clean test -f ./server/pom.xml -Dspring.profiles.active=h2
