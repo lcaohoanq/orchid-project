@@ -52,7 +52,7 @@ import org.springframework.context.annotation.Configuration;
     security = @SecurityRequirement(name = "bearer-jwt"),
     servers = {
         @Server(url = "http://localhost:8080", description = "Local Dev (HTTP)"),
-        @Server(url = "https://api.example.com", description = "Production (HTTPS)")
+        @Server(url = "https://orchid-api.lch.id.vn", description = "Production (HTTPS)")
     }
 )
 @SecurityScheme(
