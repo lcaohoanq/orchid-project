@@ -13,3 +13,12 @@ spring:
       hibernate:
         format_sql: true
     open-in-view: false
+
+  # Flyway configuration
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    user: ${POSTGRES_USER:admin}
+    password: ${POSTGRES_PASSWORD:admin}
+    baseline-description: "Baseline init for notification service"
+    baseline-version: 0
