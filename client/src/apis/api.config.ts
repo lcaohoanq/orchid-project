@@ -39,9 +39,9 @@ const createApiInstance = (baseURL: string) => {
   return instance;
 };
 
-const isDevelopment = import.meta.env.MODE === "development";
+export const isDev = process.env.NODE_ENV === "development";
 
 // Instances
 export const orchidApi = createApiInstance(
-  isDevelopment ? "http://localhost:8080/api" : "https://orchid.lch.id.vn/api",
+  isDev ? "http://localhost:8080/api" : "https://orchid.lch.id.vn/api",
 );
