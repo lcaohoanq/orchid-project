@@ -6,7 +6,7 @@ spring:
     name: orchidbe
 
   profiles:
-    active: pg
+    active: prod
 
 springdoc:
   api-docs:
