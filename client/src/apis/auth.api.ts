@@ -1,5 +1,6 @@
 import axios from "axios";
 import type { LoginRes } from "../types";
+import { baseUrl } from "./api.config";
 
 // Define interfaces for API requests and responses
 export interface LoginRequest {
@@ -19,14 +20,12 @@ export interface RegisterResponse {
   data: null;
 }
 
-const API_BASE_URL = "http://localhost:8080/api/v1"; // Replace with your actual API URL
-
 // Login API function
 export const loginApi = async (
   email: string,
   password: string,
 ): Promise<LoginRes> => {
-  const response = await axios.post(`${API_BASE_URL}/auth/login`, {
+  const response = await axios.post(`${baseUrl}/auth/login`, {
     email,
     password,
   });
