@@ -24,7 +24,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build common library with Maven
-        run: mvn clean install -f pom.xml -DskipTests
+        run: mvn clean install -f ./server/pom.xml -DskipTests
 
       - name: Log in to the Container registry
         if: ${{ github.ref == 'refs/heads/main' }}
@@ -34,9 +34,10 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build and push Docker images
-        if: ${{ github.ref == 'refs/heads/main-deployment' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./server
           push: true
+          file: Dockerfile-prod
           tags: lcaohoanq/orchidbe:latest
