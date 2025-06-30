@@ -41,7 +41,7 @@ const createApiInstance = (baseURL: string) => {
 
 export const isDev = process.env.NODE_ENV === "development";
 export const devUrl = "http://localhost:8080/api";
-export const prodUrl = "https://orchid-api.lch.id.vn";
+export const prodUrl = "https://orchid-api.lch.id.vn/api";
 export const baseUrl = isDev ? devUrl : prodUrl;
 
 // Instances

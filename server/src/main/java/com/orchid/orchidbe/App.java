@@ -18,7 +18,7 @@ public class App {
 
         var env = context.getEnvironment();
         var activeProfiles = env.getActiveProfiles();
-        if (!Arrays.asList(activeProfiles).contains("docker")) {
+        if (!Arrays.asList(activeProfiles).contains("prod")) {
             var port = env.getProperty("server.port", "8080");
             JavaBrowserLauncher.doHealthCheckThenOpenHomePage(
                 "http://localhost:" + port + "/actuator/health",
