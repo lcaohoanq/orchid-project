@@ -39,5 +39,5 @@ jobs:
         with:
           context: ./server
           push: true
-          file: Dockerfile-prod
+          file: ./server/Dockerfile-prod
           tags: lcaohoanq/orchidbe:latest
