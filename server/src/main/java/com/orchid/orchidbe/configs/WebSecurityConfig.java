@@ -91,7 +91,8 @@ public class WebSecurityConfig {
             "http://127.0.0.1:5173",
             "http://127.0.0.1:3000",
             "https://orchid-project-vert.vercel.app",
-            "https://vercel.com/lcaohoanqs-projects/orchid-project/5htCDU8U65i2NjaypLCaXibFVVf1"
+            "https://vercel.com/lcaohoanqs-projects/orchid-project/5htCDU8U65i2NjaypLCaXibFVVf1",
+            "https://orchid-api.lch.id.vn"
         ));
 
         // Allow common HTTP methods
