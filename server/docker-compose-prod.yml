@@ -1,0 +1,14 @@
+services:
+  be:
+    container_name: orchidbe
+    build:
+      context: .
+      dockerfile: Dockerfile-prod
+    ports:
+      - "4040:8080"
+    networks:
+      - sba
+
+networks:
+  sba:
+    driver: bridge
