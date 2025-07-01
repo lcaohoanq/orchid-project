@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: orchidbe
+
+  # MongoDB configuration
+  data:
+    mongodb:
+      uri: ${MONGO_DB_URL}
+      auto-index-creation: true
+
+  # Disable JPA
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+# Logging configuration
+logging:
+  level:
+    org.springframework.data.mongodb: ${MONGO_LOG_LEVEL:INFO}
+    org.mongodb.driver: ${MONGO_DRIVER_LOG_LEVEL:WARN}
